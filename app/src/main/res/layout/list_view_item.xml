@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="people"
+            type="com.example.peopletesting.network.People" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#000000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="10dp"
+            app:imageUrl="@{people.avatar}"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/people_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="@{people.name}"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/job_tile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{people.jobTitle}"
+                tools:text="Job Tile" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
