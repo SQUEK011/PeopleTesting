@@ -23,10 +23,6 @@ private const val BASE_URL =
 val httpClient = OkHttpClient.Builder()
 
 /**
- * Gson Object
- */
-
-/**
  * Moshi
  */
 //private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()

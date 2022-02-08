@@ -1,0 +1,15 @@
+[
+  {"createdAt":"2022-02-06T14:11:38.508Z",
+    "name":"Milton Braun",
+    "avatar":"http://placeimg.com/640/480/transport",
+    "jobTitle":"Product Mobility Coordinator",
+    "id":"1"
+  },
+  {
+    "createdAt":"2022-02-06T17:25:00.836Z",
+    "name":"Marcos Nitzsche II",
+    "avatar":"http://placeimg.com/640/480/nightlife",
+    "jobTitle":"Senior Usability Designer",
+    "id":"2"
+  }
+]

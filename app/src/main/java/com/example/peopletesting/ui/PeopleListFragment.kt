@@ -1,16 +1,24 @@
 package com.example.peopletesting.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.ArrayAdapter
+import android.widget.ListAdapter
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.peopletesting.databinding.FragmentPeopleListBinding
+import com.example.peopletesting.network.People
+import com.example.peopletesting.network.PeopleApi
+import com.example.peopletesting.network.PeopleApiService
+import java.lang.StringBuilder
 
 class PeopleListFragment : Fragment() {
 
-    private val viewModel: PeopleViewModel by activityViewModels()
+
+    private val viewModel: PeopleViewModel = PeopleViewModel(PeopleApi.retrofitService)
+    //lateinit var tempArray: ArrayList<String>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +31,7 @@ class PeopleListFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.recyclerView.adapter = PeopleListAdapter()
-        return binding.root
 
+        return binding.root
     }
 }

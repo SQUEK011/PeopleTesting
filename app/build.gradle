@@ -34,6 +34,10 @@ android {
         dataBinding true
         viewBinding true
     }
+
+    sourceSets {
+        test.resources.srcDirs += 'src/test/res'
+    }
 }
 
 dependencies {
@@ -72,4 +76,8 @@ dependencies {
     // Retrofit with Moshi Converter
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
     implementation "androidx.legacy:legacy-support-v4:$legacy"
+
+    //Testing
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "com.squareup.okhttp3:mockwebserver:4.9.1"
 }

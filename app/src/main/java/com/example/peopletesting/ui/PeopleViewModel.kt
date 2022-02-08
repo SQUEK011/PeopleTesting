@@ -5,13 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.peopletesting.network.People
-import com.example.peopletesting.network.PeopleApi
+//import com.example.peopletesting.network.PeopleApi
+import com.example.peopletesting.network.PeopleApiService
 import kotlinx.coroutines.launch
+import retrofit2.Retrofit
 import java.lang.Exception
 
 enum class PeopleApiStatus { LOADING, ERROR, DONE }
 
-class PeopleViewModel :ViewModel() {
+class PeopleViewModel(private var retrofitService: PeopleApiService) :ViewModel() {
 
     private val _status = MutableLiveData<PeopleApiStatus>()
     val status : LiveData<PeopleApiStatus> = _status
@@ -27,10 +29,11 @@ class PeopleViewModel :ViewModel() {
         viewModelScope.launch {
             _status.value = PeopleApiStatus.LOADING
             try {
-                _people.value = PeopleApi.retrofitService.getPeople()
+                _people.value = retrofitService.getPeople()
                 _status.value = PeopleApiStatus.DONE
             }
             catch (e: Exception){
+                //TODO Change status to a error msg
                 _status.value = PeopleApiStatus.ERROR
             }
         }
