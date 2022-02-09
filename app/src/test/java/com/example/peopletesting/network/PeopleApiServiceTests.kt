@@ -1,18 +1,15 @@
-package com.example.peopletesting
+package com.example.peopletesting.network
 
 
-import com.example.peopletesting.network.PeopleApiService
-import com.example.peopletesting.network.httpClient
 import junit.framework.Assert.*
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class PeopleApiServiceTests :BaseTest() {
+class PeopleApiServiceTests : BaseTest() {
 
     private lateinit var service: PeopleApiService
 

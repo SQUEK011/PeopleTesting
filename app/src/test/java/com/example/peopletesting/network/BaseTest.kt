@@ -1,4 +1,4 @@
-package com.example.peopletesting
+package com.example.peopletesting.network
 
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
